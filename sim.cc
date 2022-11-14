@@ -21,13 +21,14 @@
 //masuk dir sim/build
 //run make
 //run ./TOMOGRAFI
+
+
 int main(int argc, char** argv)
 {
 	G4RunManager *runManager = new G4RunManager();
 	
 	runManager->SetUserInitialization(new MyDetectorConstruction());
 	runManager->SetUserInitialization(new MyPhysicsList());
-	//runManager->SetUserInitialization(new MyPhysicsList_1());
 	runManager->SetUserInitialization(new MyActionInitialization());
 	
 	runManager->Initialize();
@@ -53,6 +54,10 @@ int main(int argc, char** argv)
 	UImanager->ApplyCommand("/vis/viewer/set/autoRefresh true");
 	UImanager->ApplyCommand("/vis/scene/add/trajectories smooth");
 	UImanager->ApplyCommand("/vis/scene/endOfEventAction accumulate"); //akumulasi event
+	//UImanager->ApplyCommand("vis/geometry/set/visibility logicWorld 0 false");
+	//UImanager->ApplyCommand("/vis/geometry/set/colour Meniscus2 0 0 0 1 .25");
+	//UImanager->ApplyCommand("/vis/geometry/set/colour chamber 0 0.5 1 0.5 .25");
+
 	
 	ui->SessionStart();
 	

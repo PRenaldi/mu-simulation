@@ -3,8 +3,12 @@
 
 #include "G4SystemOfUnits.hh"
 #include "G4VUserDetectorConstruction.hh"
+#include "G4VSolid.hh"
+#include "G4SubtractionSolid.hh"
 #include "G4Box.hh"
 #include "G4Trd.hh"
+#include "G4Sphere.hh"
+#include "G4UnionSolid.hh"
 #include "G4LogicalVolume.hh"
 #include "G4VPhysicalVolume.hh"
 #include "G4PVPlacement.hh"
